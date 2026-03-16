@@ -39,7 +39,8 @@ def show_menu():
     print("5. Mark task as complete")
     print("6. Remove a task")
     print("7. Exit")
-    
+
+#Displays all tasks their due date and current status
 def display_tasks(tasks):
     print(f"\n{'#':<4} {'Task':<30} {'Due Date':<15} {'Status'}")
     print("-" * 60)
@@ -57,6 +58,7 @@ def get_valid_date():
         except ValueError:
             print("Invalid date format. Please use YYYY-MM-DD.")
 
+#Allows the user to view the tasks by status (complete or incomplete)
 def view_by_status(tasks):
     if not tasks:
         print("No tasks available.")
@@ -82,6 +84,7 @@ def view_by_status(tasks):
     else:
         display_tasks(filtered)            
 
+#Editing the already set task
 def edit_task(task):
     if not tasks:
         print("No tasks to edit.")
@@ -108,7 +111,7 @@ def edit_task(task):
     save_tasks(tasks)
     print(f"  Task updated successfully.")
  
-
+#Mark a task as complete
 def mark_complete(tasks):
     if not tasks:
         print("No tasks to mark as complete.")
